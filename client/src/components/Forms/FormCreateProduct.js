@@ -3,12 +3,12 @@ import MarkdownIt from "markdown-it";
 import MdEditor from "react-markdown-editor-lite";
 import "react-markdown-editor-lite/lib/index.css";
 import { uploadMultiFile, uploadOneFile } from "../../api/uploadApi";
-import { addProduct } from "../../api/productApi";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 import { useDispatch } from "react-redux";
 import { createProduct } from "../../redux/reducers/productSlice";
+import { addProduct } from "../../api/ProductApi";
 
 const FormCreateProduct = () => {
   const navigate = useNavigate();
@@ -91,7 +91,7 @@ const FormCreateProduct = () => {
   };
 
   return (
-    <form onSubmit={onSubmitForm} className="p-3 h-[100%] overflow-auto">
+    <form onSubmit={onSubmitForm} name="form-product" aria-label="form-product" className="p-3 h-[100%] overflow-auto">
       <div className="w-full">
         <label className="block mb-2">Name</label>
         <input

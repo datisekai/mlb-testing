@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getConfigurationApi } from "../../api/productApi";
+import { getConfigurationApi } from "../../api/ProductApi";
 
 const Configuration = ({ img }) => {
   const [configuration, setConfiguration] = useState({});

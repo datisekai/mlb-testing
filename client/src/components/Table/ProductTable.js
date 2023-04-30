@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Plus from "../Plus";
 import { img_url } from "../../utils/contans";
 import { toast } from "react-toastify";
-import { deleteProductApi } from "../../api/productApi";
+import { deleteProductApi } from "../../api/ProductApi";
 import { useDispatch } from "react-redux";
 import { deleteProducts } from "../../redux/reducers/productSlice";
 
