@@ -61,8 +61,8 @@ const FormCreateProduct = () => {
   const onSubmitForm = async (e) => {
     e.preventDefault();
 
-    if (product.colors.length === 0 || product.memorys.length === 0)
-      return alert("Them mau sac va phien ban cua san pham !");
+      if (product.colors.length === 0 || product.memorys.length === 0)
+        return alert("Them mau sac va phien ban cua san pham !");
 
     setLoading(true);
 
@@ -168,6 +168,7 @@ const FormCreateProduct = () => {
             onChange={(e) => setColor(e.target.value)}
           />
           <button
+            data-testid="btn-add-color"
             type="button"
             className="px-4 py-2 bg-[#ffd400] rounded-md text-white ml-3"
             onClick={() => {
@@ -203,6 +204,7 @@ const FormCreateProduct = () => {
             onChange={(e) => setMemory(e.target.value)}
           />
           <button
+          data-testid="btn-add-memory"
             type="button"
             className="px-4 py-2 bg-[#ffd400] rounded-md text-white ml-3"
             onClick={() => {
