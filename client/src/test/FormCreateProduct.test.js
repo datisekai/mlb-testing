@@ -4,13 +4,10 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "@testing-library/jest-dom";
 import { store } from "../redux/store";
-import { toast } from 'react-toastify';
-
-
+import { toast } from "react-toastify";
 
 beforeEach(() => {
   jest.clearAllMocks();
- 
 });
 
 describe("FormCreateProduct", () => {
@@ -86,7 +83,6 @@ describe("FormCreateProduct", () => {
       </Provider>
     );
     global.alert = jest.fn();
-
     jest.mock("react-toastify", () => ({
       toast: {
         success: jest.fn(),
@@ -94,23 +90,23 @@ describe("FormCreateProduct", () => {
       },
     }));
 
-    const file = new File(['(⌐□_□)'], 'test.png', { type: 'image/png' });
+    const file = new File(["(⌐□_□)"], "test.png", { type: "image/png" });
 
     const inputName = screen.getByPlaceholderText("Name...");
     const inputOldPrice = screen.getByPlaceholderText("Old Price...");
     const inputNewPrice = screen.getByPlaceholderText("New Price...");
     const inputThumbnail = screen.getByPlaceholderText("Thumnail...");
     const inputImages = screen.getByPlaceholderText("Images...");
-    const inputColor = screen.getByPlaceholderText("Colors...")
-    const inputMemory = screen.getByPlaceholderText("Memorys...")
-    const btnAddColor = screen.getByTestId('btn-add-color')
-    const btnAddMemory = screen.getByTestId('btn-add-memory')
+    const inputColor = screen.getByPlaceholderText("Colors...");
+    const inputMemory = screen.getByPlaceholderText("Memorys...");
+    const btnAddColor = screen.getByTestId("btn-add-color");
+    const btnAddMemory = screen.getByTestId("btn-add-memory");
     const inputSubmit = screen.getByPlaceholderText("Add Product");
 
     fireEvent.change(inputColor, { target: { value: "" } });
     fireEvent.change(inputMemory, { target: { value: "8GB" } });
-    fireEvent.click(btnAddColor)
-    fireEvent.click(btnAddMemory)
+    fireEvent.click(btnAddColor);
+    fireEvent.click(btnAddMemory);
 
     fireEvent.change(inputName, { target: { value: "new product" } });
     fireEvent.change(inputOldPrice, { target: { value: "110000" } });
@@ -121,11 +117,11 @@ describe("FormCreateProduct", () => {
 
     fireEvent.click(inputSubmit);
 
-
-    const toastSuccessSpy = jest.spyOn(toast, "success").mockImplementation(() => {});
-     expect(toastSuccessSpy).toHaveBeenCalledWith("Add new product success !");
+    const toastSuccessSpy = jest
+      .spyOn(toast, "success")
+      .mockImplementation(() => {});
+    expect(toastSuccessSpy).toHaveBeenCalledWith("Add new product success !");
   });
-
 
   // Add more tests here...
 });

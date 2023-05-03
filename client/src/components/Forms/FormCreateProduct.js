@@ -61,8 +61,8 @@ const FormCreateProduct = () => {
   const onSubmitForm = async (e) => {
     e.preventDefault();
 
-      if (product.colors.length === 0 || product.memorys.length === 0)
-        return alert("Them mau sac va phien ban cua san pham !");
+    if (product.colors.length === 0 || product.memorys.length === 0)
+      return alert("Them mau sac va phien ban cua san pham !");
 
     setLoading(true);
 
@@ -91,7 +91,12 @@ const FormCreateProduct = () => {
   };
 
   return (
-    <form onSubmit={onSubmitForm} name="form-product" aria-label="form-product" className="p-3 h-[100%] overflow-auto">
+    <form
+      onSubmit={onSubmitForm}
+      name="form-product"
+      aria-label="form-product"
+      className="p-3 h-[100%] overflow-auto"
+    >
       <div className="w-full">
         <label className="block mb-2">Name</label>
         <input
@@ -204,7 +209,7 @@ const FormCreateProduct = () => {
             onChange={(e) => setMemory(e.target.value)}
           />
           <button
-          data-testid="btn-add-memory"
+            data-testid="btn-add-memory"
             type="button"
             className="px-4 py-2 bg-[#ffd400] rounded-md text-white ml-3"
             onClick={() => {
@@ -238,7 +243,7 @@ const FormCreateProduct = () => {
           className="border-[1px] p-2 outline-none rounded-md w-full"
           value="Phone"
           name="category"
-          value={product.category}
+          // value={product.category}
           onChange={onChangeInput}
           required
         >
