@@ -129,9 +129,9 @@ describe("FormCreateProduct", () => {
       vat: "",
     };
 
-    const expect = true;
+    const expected = true;
 
     const result = await addProduct(data);
-    expect(result.data.success).toEqual(expect);
+    expect(result.data.success).toEqual(expected);
   });
 });
