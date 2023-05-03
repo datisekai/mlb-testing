@@ -113,6 +113,7 @@ const FormEditProducts = () => {
         dispatch(updateProduct({ ...product, _id: id }));
         navigate(-1);
         toast.success(res.data.message);
+        alert('123')
       }
       setLoading(false);
     } catch (error) {
@@ -122,7 +123,7 @@ const FormEditProducts = () => {
   };
 
   return (
-    <form onSubmit={onSubmitForm} className="p-3 h-[100%] overflow-auto">
+    <form onSubmit={onSubmitForm} name="form-product" aria-label="form-product" className="p-3 h-[100%] overflow-auto">
       <div className="w-full">
         <label className="block mb-2">Name</label>
         <input

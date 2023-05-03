@@ -81,8 +81,9 @@ const FormCreateProduct = () => {
         navigate("/admin/products?page=1");
         dispatch(createProduct(res.data.product));
         toast.success("Add new product success !");
+        alert("Add new product success !")
       }
-      setLoading(false);
+      console.log('on3')
     } catch (error) {
       console.log(error.response);
       setLoading(false);

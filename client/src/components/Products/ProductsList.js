@@ -18,7 +18,7 @@ const ProductsList = ({ category, title, paginate, limit }) => {
         const res = await getProductsApi(
           category,
           searchParams.get("page"),
-          limit
+          limit 
         );
         if (res.data.success) {
           setProduct(res.data.products);
