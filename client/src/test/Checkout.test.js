@@ -1,7 +1,7 @@
-import ModalEditOder from "../components/Modal/ModalEditOder";
+import CheckOut from "../pages/CheckOut";
 import "@testing-library/jest-dom";
 import { createOrderApi } from "../api/orderApi";
-describe(ModalEditOder, () => {
+describe(CheckOut, () => {
   test("Thêm đơn hàng mới", async () => {
     const newOrder = {
       name: "Dương",
